@@ -526,6 +526,56 @@
 
     <footer class="page-footer bg-color">
     
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="803783356"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -539,7 +589,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">69.4k</span>&nbsp;字
+                class="white-color">74.6k</span>&nbsp;字
             
             
             
@@ -799,6 +849,8 @@ $(function () {
     
 
     
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
 
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
@@ -814,6 +866,7 @@ if (windowWidth > 768) {
     document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
 }
 </script>
+<!--HTML全局模板-->
 <!--人体时钟背景透明-->
 <!-- <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script> -->
 <!--浏览器搞笑标题-->

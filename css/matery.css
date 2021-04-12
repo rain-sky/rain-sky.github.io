@@ -1,3 +1,4 @@
+
 /*全局基础样式*/
 /*小屏幕下(手机类)的样式*/
 @media only screen and (max-width: 601px) {
@@ -43,7 +44,7 @@
 
 body {
     /* background-color: #eaeaea; */
-    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png"), url("https://ae01.alicdn.com/kf/H21b5f6b8496141a1979a33666e1074d9x.jpg") 0px 0px;
+    /*background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png"), url("https://ae01.alicdn.com/kf/H21b5f6b8496141a1979a33666e1074d9x.jpg") 0px 0px;*/
     background-attachment: fixed;
     margin: 0;
     color: #7F95D1;
@@ -2147,4 +2148,26 @@ footer .copy-right {
     height: 50px;
     padding: 0;
     margin: 0;
+}
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/**/
+#veditor {
+    background-image: url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: vertical
 }
