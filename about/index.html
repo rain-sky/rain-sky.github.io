@@ -399,9 +399,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -671,7 +669,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Java","spring","sql","数据库","sprigMvc","springMvc","maven","mybatis","多线程","计组"]
+                data: ["Java","spring","sql","数据库","sprigMvc","mybatis","springMvc","maven","多线程","计组"]
             }
         ],
         yAxis: [
@@ -872,18 +870,6 @@
             
             
             
-            <a href="/tags/springMvc/">
-                <span class="chip center-align waves-effect waves-light chip-default">springMvc</span>
-            </a>
-            
-            
-            
-            <a href="/tags/maven/">
-                <span class="chip center-align waves-effect waves-light chip-default">maven</span>
-            </a>
-            
-            
-            
             <a href="/tags/spring/">
                 <span class="chip center-align waves-effect waves-light chip-default">spring</span>
             </a>
@@ -892,6 +878,18 @@
             
             <a href="/tags/mybatis/">
                 <span class="chip center-align waves-effect waves-light chip-default">mybatis</span>
+            </a>
+            
+            
+            
+            <a href="/tags/springMvc/">
+                <span class="chip center-align waves-effect waves-light chip-default">springMvc</span>
+            </a>
+            
+            
+            
+            <a href="/tags/maven/">
+                <span class="chip center-align waves-effect waves-light chip-default">maven</span>
             </a>
             
             
