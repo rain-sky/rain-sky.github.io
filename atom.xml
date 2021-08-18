@@ -6,7 +6,7 @@
   <link href="https://rain-sky.github.io/atom.xml" rel="self"/>
   
   <link href="https://rain-sky.github.io/"/>
-  <updated>2021-08-17T09:45:02.057Z</updated>
+  <updated>2021-08-18T10:05:19.631Z</updated>
   <id>https://rain-sky.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>集合初探</title>
+    <link href="https://rain-sky.github.io/2021/08/18/%E9%9B%86%E5%90%88%E5%88%9D%E6%8E%A2/"/>
+    <id>https://rain-sky.github.io/2021/08/18/%E9%9B%86%E5%90%88%E5%88%9D%E6%8E%A2/</id>
+    <published>2021-08-18T10:02:54.000Z</published>
+    <updated>2021-08-18T10:05:19.631Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="-Java" scheme="https://rain-sky.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>排序算法归纳</title>
@@ -443,28 +465,6 @@
 &lt;/div&gt;
 
 &lt;h2 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; </summary>
-      
-    
-    
-    
-    
-    <category term="Java" scheme="https://rain-sky.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅析==,equals,hashcode</title>
-    <link href="https://rain-sky.github.io/2021/04/27/%E6%B5%85%E6%9E%90-equals-hashcode/"/>
-    <id>https://rain-sky.github.io/2021/04/27/%E6%B5%85%E6%9E%90-equals-hashcode/</id>
-    <published>2021-04-27T00:52:45.000Z</published>
-    <updated>2021-08-11T12:33:41.311Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="浅析-equals-hashcode"><a href="#浅析-equals-hashcode" class="headerlink" title="浅析==,equals,hashcode"></a>浅析==,equals,hashcode</h1><h2 id="情景回顾"><a href="#情景回顾" class="headerlink" title="情景回顾"></a>情景回顾</h2><p>有一问曰：两个obj，如果equals相等，hashCode()一定相等(符合代码规范的情况下)</p><p>首先：</p><ol><li>== 比较的是两个对象在java虚拟机中的地址</li><li>equals 默认比较的也是两个对象在java虚拟机中的地址，但是我们可以对一个对象的equals方法进行重写，而“==”我们无法重写</li><li>hashcode 返回一个对象在java虚拟机中的地址</li></ol><h2 id="JDK-8中Object类中对于equals与hashcode方法的描述"><a href="#JDK-8中Object类中对于equals与hashcode方法的描述" class="headerlink" title="JDK 8中Object类中对于equals与hashcode方法的描述"></a>JDK 8中Object类中对于equals与hashcode方法的描述</h2><blockquote><h4 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span></span><br></pre></td></tr></tbody></table></figure><p>指示一些其他对象是否等于此。</p><p><code>equals</code>方法在非空对象引用上实现等价关系： </p><ul><li><em>自反性</em> ：对于任何非空的参考值<code>x</code> ，  <code>x.equals(x)</code>应该返回<code>true</code> 。 </li><li>它是<em>对称的</em> ：对于任何非空引用值<code>x</code>和<code>y</code> ，  <code>x.equals(y)</code>应该返回<code>true</code>当且仅当<code>y.equals(x)</code>回报<code>true</code>  。 </li><li><em>传递性</em> ：对于任何非空引用值<code>x</code> ， <code>y</code>和<code>z</code>  ，如果<code>x.equals(y)</code>回报<code>true</code>个<code>y.equals(z)</code>回报<code>true</code>  ，然后<code>x.equals(z)</code>应该返回<code>true</code> 。 </li><li>它是<em>一致的</em> ：对于任何非空引用值<code>x</code>和<code>y</code>  ，多次调用<code>x.equals(y)</code>始终返回<code>true</code>或始终返回<code>false</code>  ，没有设置中使用的信息<code>equals</code>比较上的对象被修改。 </li><li>对于任何非空的参考值<code>x</code> ，  <code>x.equals(null)</code>应该返回<code>false</code> 。 </li></ul><p>该<code>equals</code>类方法<code>Object</code>实现对象上差别可能性最大的相等关系;  也就是说，对于任何非空的参考值<code>x</code>和<code>y</code>  ，当且仅当<code>x</code>和<code>y</code>引用相同的对象（ <code>x ==  y</code>具有值<code>true</code> ）时，该方法返回<code>true</code> 。 </p><p>请注意，无论何时覆盖该方法，通常需要覆盖<code>hashCode</code>方法，以便维护<code>hashCode</code>方法的通用合同，该方法规定相等的对象必须具有相等的哈希码。 </p><ul><li><p>参数 </p><p><code>obj</code> - 与之比较的参考对象。 </p></li><li><p>结果 </p><p><code>true</code>如果此对象与obj参数相同;  <code>false</code>否则。 </p></li></ul></blockquote><blockquote><h4 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode"></a>hashCode</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br></pre></td></tr></tbody></table></figure><p>返回对象的哈希码值。支持这种方法是为了散列表，如<a href="../../java/util/HashMap.html"><code>HashMap</code></a>提供的那样 。</p><p><code>hashCode</code>的总合同是： </p><ul><li>只要在执行Java应用程序时多次在同一个对象上调用该方法，  <code>hashCode</code>方法必须始终返回相同的整数，前提是修改了对象中<code>equals</code>比较中的信息。  该整数不需要从一个应用程序的执行到相同应用程序的另一个执行保持一致。 </li><li>如果根据<code>equals(Object)</code>方法两个对象相等，则在两个对象中的每个对象上调用<code>hashCode</code>方法必须产生相同的整数结果。 </li><li><em>不</em>要求如果两个对象根据equals(java.lang.Object)方法不相等，那么在两个对象中的每个对象上调用hashCode方法必须产生不同的整数结果。  但是，程序员应该意识到，为不等对象生成不同的整数结果可能会提高哈希表的性能。 </li></ul><p>尽可能多的合理实用，由类别Object定义的hashCode方法确实为不同对象返回不同的整数。  （这通常通过将对象的内部地址转换为整数来实现，但Java的编程语言不需要此实现技术。） </p><ul><li><p>结果 </p><p>该对象的哈希码值。 </p></li></ul></blockquote><hr><p><strong>由以上描述可知：</strong></p><blockquote><p><strong>hashCode是所有java对象的固有方法，如果不重载的话，返回的实际上是该对象在jvm的堆上的内存地址，而不同对象的内存地址肯定不同，所以这个hashCode也就肯定不同</strong>了。如果重载了的话，由于采用的算法的问题，有可能导致两个不同对象的hashCode相同。</p><p>两个对象equals（）相同，那么hashcode肯定也相同，但equals()不同，hashcode不一定不同。</p><p>而且，还需要注意一下两点：</p><p>1）hashCode和equals两个方法是有语义关联的，它们需要满足：</p><p>A.equals(B)==true –&gt; A.hashCode()==B.hashCode()</p><p>因此重载其中一个方法时也需要将另一个也重载。</p></blockquote><h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>String类型重载hashCode()的实现</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果hash值为0，生成hash，只会执行一次</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> h = hash;</span><br><span class="line">    <span class="keyword">if</span> (h == <span class="number">0</span> &amp;&amp; value.length &gt; <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">char</span> val[] = value;</span><br><span class="line">        <span class="comment">//hashCode的生成算法，由此可知只要value数组值相同，hashCode必定相同</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; value.length; i++) {</span><br><span class="line">            h = <span class="number">31</span> * h + val[i];</span><br><span class="line">        }</span><br><span class="line">        hash = h;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> h;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p><span class="github-emoji"><span>💡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>请思考，String为什么要重载HashCode()方法？</p><p>附上String类equals源码实现</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object anObject)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == anObject) {</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (anObject <span class="keyword">instanceof</span> String) {</span><br><span class="line">        String anotherString = (String)anObject;</span><br><span class="line">        <span class="keyword">int</span> n = value.length;</span><br><span class="line">        <span class="keyword">if</span> (n == anotherString.value.length) {</span><br><span class="line">            <span class="keyword">char</span> v1[] = value;</span><br><span class="line">            <span class="keyword">char</span> v2[] = anotherString.value;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n-- != <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span> (v1[i] != v2[i])</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                i++;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;浅析-equals-hashcode&quot;&gt;&lt;a href=&quot;#浅析-equals-hashcode&quot; class=&quot;headerlink&quot; title=&quot;浅析==,equals,hashcode&quot;&gt;&lt;/a&gt;浅析==,equals,hashcode&lt;/h1&gt;&lt;h2 i</summary>
       
     
     
